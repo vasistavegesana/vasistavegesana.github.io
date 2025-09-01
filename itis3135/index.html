@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vasista Vegesana's Vibrant Vulture || ITIS 3135 || Home</title>
-  <link rel="stylesheet" href="styles/default.css" />
+  <link rel="stylesheet" href="styles/default.css">
 </head>
 <body>
   <div class="container">
@@ -31,18 +31,23 @@
         <a href="https://www.codecademy.com/profiles/vasistavegesana" target="_blank">Codecademy</a> ||
         <a href="https://www.linkedin.com/in/vasista-vegesana-585aba1a5/" target="_blank">LinkedIn</a>
       </nav>
+
       <p>Page Built by Vibrant Vulture Web Works &copy; <span id="year"></span></p>
+
       <div class="validators">
         <a href="https://validator.w3.org/check?uri=referer" id="validation_link_html">
-          <img src="https://mytienhoang.github.io/itis3135/z_archives/html_validation.png" width="88" height="31" alt="Validate HTML">
+          <img src="images/html_validation.png" width="88" height="31" alt="Validate HTML">
         </a>
         <a href="https://jigsaw.w3.org/css-validator/check/referer" id="validation_link_css">
-          <img src="https://jigsaw.w3.org/css-validator/images/vcss" width="88" height="31" alt="Validate CSS">
+          <img src="images/css_validation.png" width="88" height="31" alt="Validate CSS">
         </a>
       </div>
+
       <script>
-        document.getElementById("validation_link_html").setAttribute("href","https://validator.w3.org/check?uri=" + location.href);
-        document.getElementById("validation_link_css").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+        document.getElementById("validation_link_html")
+          .setAttribute("href","https://validator.w3.org/check?uri=" + location.href);
+        document.getElementById("validation_link_css")
+          .setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
         document.getElementById("year").textContent = new Date().getFullYear();
       </script>
     </footer>
