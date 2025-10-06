@@ -149,7 +149,7 @@ footer a {
   font-weight: 600;
   margin: 0 0.5rem;
   text-shadow: 0 0 4px #ffea00, 0 0 8px #ffea00;
-  text-shadow: 0 0 2px #fff, 0 0 4px #ffea00;
+  text-shadow: 0 0 1px #fff, 0 0 1px #ffea00;
   transition: all 0.3s ease-in-out;
 }
 
@@ -159,6 +159,24 @@ footer a:hover {
   text-shadow: 0 0 4px #ffffff, 0 0 6px #ffea00;
   transform: scale(1.03);
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+th, td {
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.75rem;
+  text-align: left;
+}
+th {
+  background: rgba(0,0,0,0.4);
+}
+tr:nth-child(even) {
+  background: rgba(255,255,255,0.05);
+}
+
 
 
 
