@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Valorant — My Gaming Hobby</title>
+
+  <!-- Embedded Stylesheet (required) -->
+  <style>
+    /* ============ Base / Theme ============ */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    :root{
+      --bg: #0d0f14;             /* not plain white */
+      --panel: #141826;
+      --ink: #e9f1ff;            /* not pure black */
+      --muted: #9fb3d1;
+      --accent: #ff4664;         /* Valorant vibe */
+      --accent-2:#00e0a3;
+      --divider: "◆";            /* unique divider symbol */
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --gap: 1rem;
+      --maxw: 1100px;
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.6;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 800px at 10% -10%, #1c2238 0%, transparent 60%),
+        radial-gradient(1200px 800px at 110% 110%, #1a1f33 0%, transparent 60%),
+        linear-gradient(180deg, #0b0e14 0%, #0a0c12 100%);
+    }
+
+    a{ color: var(--accent-2); text-decoration: none; border-bottom: 2px solid transparent; }
+    a:hover, a:focus{ border-color: var(--accent-2); outline: none; }
+
+    .wrap{ max-width: var(--maxw); margin-inline:auto; padding: 1rem; }
+
+    /* ============ Layout ============ */
+    header, footer{
+      background: linear-gradient(135deg, rgba(255,70,100,.12), rgba(0,224,163,.10));
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    header{ padding: 1.25rem; margin: 1rem auto; }
+    header h1{
+      margin: 0 0 .5rem 0;
+      font-weight: 700;
+      letter-spacing:.5px;
+    }
+    header p.sub{
+      margin:.25rem 0 1rem 0; color: var(--muted); font-weight:300;
+    }
+
+    /* Accessible skip link */
+    .skip-link{
+      position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{ left:1rem; top:1rem; width:auto; height:auto; padding:.5rem .75rem; background:#000; color:#fff; z-index:9999; border-radius:8px; }
+
+    /* ============ Radio-tab Navigation (CSS-only SPA) ============ */
+    /* Hide the radios but keep them focusable via labels */
+    input[name="tab"]{
+      position: absolute;
+      inline-size:1px; block-size:1px;
+      margin:-1px; border:0; padding:0;
+      clip: rect(0 0 0 0); overflow: hidden;
+    }
+
+    nav.tabs{
+      display:flex; flex-wrap:wrap; gap:.5rem; align-items:center;
+      padding:.5rem; border-radius:12px;
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.06);
+    }
+    nav.tabs .sp{ opacity:.5; }
+    nav.tabs label{
+      cursor:pointer; padding:.5rem .9rem;
+      border-radius:999px;
+      font-weight:500; letter-spacing:.2px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      transition: transform .15s ease, background .2s ease, border-color .2s ease;
+      user-select:none;
+    }
+    nav.tabs label:hover{ transform: translateY(-1px); }
+    /* Checked (active) states */
+    #tab-what:checked ~ header nav label[for="tab-what"],
+    #tab-who:checked  ~ header nav label[for="tab-who"],
+    #tab-when:checked ~ header nav label[for="tab-when"],
+    #tab-where:checked~ header nav label[for="tab-where"],
+    #tab-how:checked  ~ header nav label[for="tab-how"],
+    #tab-why:checked  ~ header nav label[for="tab-why"],
+    #tab-ai:checked   ~ header nav label[for="tab-ai"]{
+      background: linear-gradient(135deg, rgba(255,70,100,.35), rgba(0,224,163,.35));
+      border-color: rgba(255,255,255,.25);
+    }
+
+    main{
+      margin: 1rem auto 1.25rem;
+      padding: clamp(1rem, 1.5vw, 1.5rem);
+      background: var(--panel);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.06);
+    }
+
+    section{ display:none; }
+    /* Show the section that matches the checked tab */
+    #tab-what:checked ~ main #what{ display:block; }
+    #tab-who:checked  ~ main #who{ display:block; }
+    #tab-when:checked ~ main #when{ display:block; }
+    #tab-where:checked~ main #where{ display:block; }
+    #tab-how:checked  ~ main #how{ display:block; }
+    #tab-why:checked  ~ main #why{ display:block; }
+    #tab-ai:checked   ~ main #ai{ display:block; }
+
+    /* ============ Content styling ============ */
+    h2{ margin-top:0; font-size: clamp(1.4rem, 2.5vw, 2rem); }
+    .lead{ color: var(--muted); max-width: 75ch; }
+    .grid{
+      display:grid; gap: var(--gap);
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-top: 1rem;
+    }
+    .card{
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+    figure{
+      margin:0; background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: 14px; overflow:hidden;
+    }
+    figure img{
+      display:block; width:100%; height:auto;
+    }
+    figcaption{
+      padding:.75rem 1rem; font-weight:500; color: var(--muted);
+      border-top:1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.2);
+    }
+    .prompt{ margin:.5rem 0 0; font-style: italic; color: var(--muted); }
+
+    ul.check{
+      list-style:none; padding:0; margin:0;
+    }
+    ul.check li{ padding-left:1.25rem; position:relative; }
+    ul.check li::before{
+      content:"✓"; position:absolute; left:0; color: var(--accent-2); font-weight:700;
+    }
+
+    table{
+      width:100%;
+      border-collapse: collapse;
+      overflow:hidden;
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,.12);
+    }
+    th, td{ padding:.7rem .8rem; text-align:left; }
+    thead th{
+      background: linear-gradient(135deg, rgba(255,70,100,.25), rgba(0,224,163,.25));
+    }
+    tbody tr:nth-child(even){ background: rgba(255,255,255,.04); }
+
+    form .row{ display:grid; gap:.6rem; grid-template-columns: 1fr 1fr; }
+    form label{ display:block; font-weight:500; }
+    input, select, textarea, button{
+      width:100%; padding:.65rem .75rem; border-radius:10px; border:1px solid rgba(255,255,255,.15);
+      background:#0f1320; color: var(--ink);
+    }
+    button{
+      cursor:pointer; border:1px solid rgba(255,255,255,.25);
+      background: linear-gradient(135deg, var(--accent), #ff7a90);
+      font-weight:700;
+    }
+    button:hover{ filter: brightness(1.05); }
+
+    blockquote{
+      margin:0; padding:1rem 1rem 1rem 1.25rem; border-left:4px solid var(--accent);
+      background: rgba(255,255,255,.04); border-radius: 10px;
+      color: var(--muted);
+    }
+
+    .divider{
+      margin: .75rem 0 0 0; font-size:.9rem; color: var(--muted);
+    }
+
+    footer{
+      margin: 0 auto 2rem; padding:1rem;
+    }
+    .footer-grid{
+      display:grid; gap:.75rem; grid-template-columns: 1fr auto;
+      align-items:center;
+    }
+    .badges{
+      display:flex; flex-wrap:wrap; gap:.5rem;
+    }
+    .badge{
+      padding:.45rem .7rem; border-radius:10px; font-weight:700; font-size:.9rem;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .badge:hover{ border-color: rgba(255,255,255,.3); }
+
+    /* Responsiveness */
+    @media (max-width:720px){
+      form .row{ grid-template-columns: 1fr; }
+      nav.tabs{ gap:.35rem; }
+      nav.tabs label{ padding:.45rem .7rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- CSS-only TAB CONTROLS -->
+  <input type="radio" name="tab" id="tab-what" checked />
+  <input type="radio" name="tab" id="tab-who" />
+  <input type="radio" name="tab" id="tab-when" />
+  <input type="radio" name="tab" id="tab-where" />
+  <input type="radio" name="tab" id="tab-how" />
+  <input type="radio" name="tab" id="tab-why" />
+  <input type="radio" name="tab" id="tab-ai" />
+
+  <header class="wrap" role="banner" aria-label="Site header">
+    <h1>Valorant — My Gaming Hobby</h1>
+    <p class="sub">Tactical FPS • Team strategy • Aim training • Agent mastery</p>
+
+    <nav class="tabs" aria-label="Section navigation">
+      <label for="tab-what">🏠 What</label><span class="sp" aria-hidden="true"> ◆ </span>
+      <label for="tab-who">👤 Who</label><span class="sp" aria-hidden="true"> ◆ </span>
+      <label for="tab-when">🕒 When</label><span class="sp" aria-hidden="true"> ◆ </span>
+      <label for="tab-where">📍 Where</label><span class="sp" aria-hidden="true"> ◆ </span>
+      <label for="tab-how">⚙️ How</label><span class="sp" aria-hidden="true"> ◆ </span>
+      <label for="tab-why">💡 Why</label><span class="sp" aria-hidden="true"> ◆ </span>
+      <label for="tab-ai">🤖 AI Prompts</label>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap" role="main">
+    <!-- WHAT (Home) -->
+    <section id="what" aria-labelledby="h-what">
+      <h2 id="h-what">What is Valorant?</h2>
+      <p class="lead">Valorant is a 5v5 tactical shooter by Riot Games where precision aim meets ability-driven strategy. Rounds are fast, economy matters, and teamwork wins.</p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Core Loop</h3>
+          <ul class="check">
+            <li>Attack/Defend bombsites (Spike)</li>
+            <li>Coordinate abilities & utility</li>
+            <li>Eco management (save, force, buy)</li>
+            <li>Adapt agents & comps to maps</li>
+          </ul>
+        </div>
+
+        <figure>
+          <img src="images/valorant-home.jpg" alt="Stylized Valorant agents lineup art" />
+          <figcaption>Agent lineup — style & synergy</figcaption>
+        </figure>
+        <p class="prompt"><em>AI prompt used: “wide angle poster of Valorant agents in cohesive neon palette, clean graphic style, dark sci-fi background, high contrast, 16:9”</em></p>
+
+        <div class="card">
+          <h3>Quick Facts</h3>
+          <table aria-label="Valorant quick facts">
+            <thead><tr><th>Item</th><th>Details</th></tr></thead>
+            <tbody>
+              <tr><td>Mode</td><td>5v5 Attack/Defend</td></tr>
+              <tr><td>Round Timer</td><td>~100–120s</td></tr>
+              <tr><td>Win Condition</td><td>First to 13 rounds</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="divider">Tip: Start with aim basics, then layer utility lineups and timing.</p>
+    </section>
+
+    <!-- WHO -->
+    <section id="who" aria-labelledby="h-who">
+      <h2 id="h-who">Who am I (and favorite agents)</h2>
+      <div class="grid">
+        <div class="card">
+          <p>Hi! I’m a controller/duelist flex who loves <strong>Omen</strong> for smokes and <strong>Jett</strong> for entry. I queue competitive on weekends and customs with friends to practice executes.</p>
+          <ul class="check">
+            <li>Primary: Omen / Viper</li>
+            <li>Secondary: Jett / Raze</li>
+            <li>Role: Controller → Duelist flex</li>
+          </ul>
+        </div>
+
+        <figure>
+          <img src="images/favorite-agents.jpg" alt="Collage of Omen, Viper, and Jett in a cohesive art style" />
+          <figcaption>My mains: Omen control, Viper lineups, Jett entry</figcaption>
+        </figure>
+        <p class="prompt"><em>AI prompt used: “portrait collage of Omen, Viper, Jett in unified teal-magenta palette, minimalist poster aesthetic, crisp edges”</em></p>
+
+        <div class="card">
+          <h3>Squad Roles</h3>
+          <table aria-label="Team roles">
+            <thead><tr><th>Role</th><th>Responsibility</th></tr></thead>
+            <tbody>
+              <tr><td>IGL</td><td>Mid-round calls, site exec plans</td></tr>
+              <tr><td>Entry</td><td>First in, space creation</td></tr>
+              <tr><td>Anchor</td><td>Site hold, utility delay</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHEN -->
+    <section id="when" aria-labelledby="h-when">
+      <h2 id="h-when">When I Play (schedule & routines)</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Weekly Rhythm</h3>
+          <table aria-label="Weekly practice plan">
+            <thead><tr><th>Day</th><th>Focus</th><th>Duration</th></tr></thead>
+            <tbody>
+              <tr><td>Mon/Wed</td><td>Aim (Kovaak/Aimlabs), recoil, sheriff DM</td><td>45–60 min</td></tr>
+              <tr><td>Fri</td><td>Lineups & utility drills</td><td>30–45 min</td></tr>
+              <tr><td>Sat/Sun</td><td>Ranked sets (2–4 matches)</td><td>2–3 hrs</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure>
+          <img src="images/schedule.jpg" alt="Stylized weekly planner with aim, utility, and scrim blocks" />
+          <figcaption>Consistent blocks beat marathon grinds</figcaption>
+        </figure>
+        <p class="prompt"><em>AI prompt used: “clean weekly gaming schedule desk flatlay, neon accents, readable blocks labeled Aim / Utility / Ranked, overhead view”</em></p>
+
+        <div class="card">
+          <h3>Pre-match Routine</h3>
+          <ul class="check">
+            <li>5–10 min warmup in range</li>
+            <li>2 deathmatches: sheriff / rifle</li>
+            <li>Hydrate, adjust sens if off</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHERE -->
+    <section id="where" aria-labelledby="h-where">
+      <h2 id="h-where">Where I Learn & Play</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Maps I Love</h3>
+          <ul class="check">
+            <li>Ascent — mid control & fundamentals</li>
+            <li>Bind — teleport mind games</li>
+            <li>Haven — triple site rotations</li>
+          </ul>
+        </div>
+
+        <figure>
+          <img src="images/map-ascent.jpg" alt="Cinematic Ascent mid courtyard scene" />
+          <figcaption>Ascent — default mid fights, textbook rotations</figcaption>
+        </figure>
+        <p class="prompt"><em>AI prompt used: “cinematic screenshot-style render of Valorant Ascent mid courtyard at dusk, soft volumetric light, clean composition, 16:9”</em></p>
+
+        <div class="card">
+          <h3>Resources</h3>
+          <ul class="check">
+            <li>Patch notes & agent updates</li>
+            <li>Lineup spreadsheets / minimap pins</li>
+            <li>Pro VOD reviews & comms</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section id="how" aria-labelledby="h-how">
+      <h2 id="h-how">How I Improve</h2>
+      <div class="grid">
+        <figure>
+          <img src="images/aim-setup.jpg" alt="Minimal desk setup with mousepad, 240Hz monitor, crosshair sheet" />
+          <figcaption>Aim & comfort setup</figcaption>
+        </figure>
+        <p class="prompt"><em>AI prompt used: “minimal esports desk setup, 240hz monitor, large mousepad, clean cable management, soft neon rim light, photo-real”</em></p>
+
+        <div class="card">
+          <h3>Training Blocks</h3>
+          <ul class="check">
+            <li>Micro-flicks & tracking (15m)</li>
+            <li>Crosshair placement VOD review (10m)</li>
+            <li>Utility test range & lineups (10m)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Custom Request (Form)</h3>
+          <form aria-label="Request a practice plan">
+            <div class="row">
+              <label>Role
+                <select>
+                  <option>Controller</option>
+                  <option>Duelist</option>
+                  <option>Initiator</option>
+                  <option>Sentinel</option>
+                </select>
+              </label>
+              <label>Current Rank
+                <select>
+                  <option>Iron</option><option>Bronze</option><option>Silver</option>
+                  <option>Gold</option><option>Platinum</option><option>Ascendant+</option>
+                </select>
+              </label>
+            </div>
+            <label>Focus Area
+              <input type="text" placeholder="e.g., entry timing on Ascent A"/>
+            </label>
+            <label>Notes
+              <textarea rows="3" placeholder="Anything specific you want drilled?"></textarea>
+            </label>
+            <button type="button" aria-disabled="true" title="Demo only">Generate Plan</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section id="why" aria-labelledby="h-why">
+      <h2 id="h-why">Why I Love It</h2>
+      <div class="grid">
+        <div class="card">
+          <p>Valorant blends deliberate, methodical rounds with creative outplays. It rewards planning and clear comms, but always leaves room for a clutch.</p>
+          <blockquote>“Discipline first, confidence second. Play the round, not the ego.”</blockquote>
+        </div>
+
+        <figure>
+          <img src="images/clutch-moment.jpg" alt="Dramatic moment of a 1v2 clutch with spike timer" />
+          <figcaption>Nothing beats a 1v2 defuse with 0.2s left</figcaption>
+        </figure>
+        <p class="prompt"><em>AI prompt used: “tense esports clutch moment, defuse countdown UI glow, bokeh lights, player silhouette, cinematic angle”</em></p>
+
+        <div class="card">
+          <h3>What it Teaches</h3>
+          <ul class="check">
+            <li>Team communication & leadership</li>
+            <li>Scenario planning & time management</li>
+            <li>Review → adjust → iterate mindset</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI PROMPTS -->
+    <section id="ai" aria-labelledby="h-ai">
+      <h2 id="h-ai">AI Prompts & Models Used</h2>
+      <p class="lead">I used AI for copy brainstorming and image concepts. Replace any placeholder images with your own AI-generated or open-source images to finalize.</p>
+
+      <div class="card">
+        <h3>Models</h3>
+        <ul class="check">
+          <li>Text/code assist: ChatGPT (model: GPT-5 Thinking)</li>
+          <li>Images: any consistent style generator (e.g., “photoreal poster” or “clean graphic poster”)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Global Prompts (code/layout)</h3>
+        <ul>
+          <li>“Build a single-file, CSS-only tabbed site (no JS) using radio buttons to show/hide sections. Use CRAP, accessible focus, and a Valorant-inspired palette.”</li>
+          <li>“Provide figures with captions and an italic paragraph under each showing the exact image prompt.”</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Image Prompts (also shown under figures)</h3>
+        <ul>
+          <li>Agent lineup poster in unified neon palette</li>
+          <li>Portrait collage of Omen, Viper, Jett</li>
+          <li>Weekly gaming schedule flatlay</li>
+          <li>Cinematic Ascent courtyard render</li>
+          <li>Minimal esports desk setup photo</li>
+          <li>Esports clutch cinematic still</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap" role="contentinfo">
+    <div class="footer-grid">
+      <p>Designed by
+        <a href="../designfirm/index.html">Your Design Firm</a>
+      </p>
+      <div class="badges" aria-label="Validation links">
+        <!-- Update UNCCID below after publishing so validators check your live URL -->
+        <a class="badge" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwebpages.charlotte.edu%2FUNCCID%2Fitis3135%2Fhobby%2F" target="_blank" rel="noopener">HTML</a>
+        <a class="badge" href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwebpages.charlotte.edu%2FUNCCID%2Fitis3135%2Fhobby%2F&profile=css3svg&usermedium=all&warning=0" target="_blank" rel="noopener">CSS</a>
+        <a class="badge" href="https://wave.webaim.org/report#/%2F%2Fwebpages.charlotte.edu%2FUNCCID%2Fitis3135%2Fhobby%2F" target="_blank" rel="noopener">Accessibility</a>
+      </div>
+    </div>
+    <p class="divider">Use <span aria-hidden="true">◆</span> as the unique divider symbol for this page.</p>
+  </footer>
+
+  <!-- Notes:
+    1) Place your images in /images with the names used above, or change the src paths.
+    2) After upload, replace UNCCID in the validator URLs.
+    3) Add this Hobby page link to your main site’s secondary nav.
+    4) This page uses CSS-only radios to satisfy “hide sections” without JS.
+  -->
+</body>
+</html>
