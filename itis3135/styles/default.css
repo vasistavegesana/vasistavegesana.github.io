@@ -177,7 +177,72 @@ tr:nth-child(even) {
   background: rgba(255,255,255,0.05);
 }
 
+#result img {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin: 1rem 0;
+  object-fit: cover;
+}
 
+
+/* Center the intro result layout */
+#result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Style the figure (image + caption) */
+#result figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Limit image size and add subtle shadow */
+#result img {
+  max-width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+/* Center all text content nicely */
+#result p,
+#result ul,
+#result blockquote {
+  max-width: 600px;
+  text-align: center;
+  margin: 10px auto;
+}
+
+/* Make the success message pop */
+.success-message {
+  color: #00ff99;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade-in animation for smooth feedback */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 

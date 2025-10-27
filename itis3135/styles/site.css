@@ -1,0 +1,247 @@
+body {
+  background: linear-gradient(180deg, #dff1ff 0%, #c6e6ff 100%);
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 2.5rem 3rem;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+main:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #003c8f;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+fieldset {
+  border: none;
+  background-color: #f7fbff;
+  border-left: 5px solid #003c8f;
+  border-radius: 10px;
+  margin-bottom: 1.8rem;
+  padding: 1.5rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+legend {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #003c8f;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #222;
+}
+
+input,
+textarea,
+button,
+select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #cfd8dc;
+  background: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #0056b3;
+  box-shadow: 0 0 6px rgba(0, 91, 187, 0.25);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: linear-gradient(90deg, #004b8d, #007bff);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #0066cc, #004b8d);
+}
+
+#add-course {
+  margin-top: 0.5rem;
+  width: auto;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  background: #0b72b9;
+}
+
+#add-course:hover {
+  background: #095d97;
+}
+
+.course-row {
+  margin-bottom: 10px;
+}
+
+.course-row input {
+  margin-bottom: 0.5rem;
+}
+
+.course-row .delete-course {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.course-row .delete-course:hover {
+  background-color: #b71c1c;
+}
+
+/* Result styling (after submit) */
+#result {
+  background: #ffffff;
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  line-height: 1.7;
+}
+
+#result img {
+  max-width: 200px;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+#result h2 {
+  color: #004b8d;
+  text-align: center;
+}
+
+#reset-intro {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#reset-intro:hover {
+  text-decoration: underline;
+}
+
+/* Mobile friendly */
+@media (max-width: 700px) {
+  main {
+    padding: 1.2rem;
+  }
+}
+
+#result {
+  background: linear-gradient(180deg, #e6f2ff 0%, #cfe5ff 100%);
+  border-radius: 18px;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  text-align: center;
+  color: #111;
+  line-height: 1.7;
+}
+
+#result h2 {
+  font-size: 2rem;
+  color: #003c8f;
+  margin-bottom: 1.2rem;
+}
+
+#result figure {
+  margin: 1.5rem 0;
+}
+
+#result img {
+  max-width: 220px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+#result ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+  margin: 1.5rem auto;
+  max-width: 600px;
+}
+
+#result ul li {
+  margin-bottom: 0.6rem;
+}
+
+#result strong {
+  color: #003c8f;
+}
+
+#result blockquote {
+  margin: 1.5rem auto;
+  font-style: italic;
+  color: #333;
+  border-left: 4px solid #003c8f;
+  padding-left: 12px;
+  max-width: 600px;
+  text-align: left;
+}
+
+#reset-intro {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #004b8d;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#reset-intro:hover {
+  text-decoration: underline;
+}

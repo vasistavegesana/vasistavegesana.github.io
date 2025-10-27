@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction Form | Vasista Vegesana</title>
+    <link rel="stylesheet" href="styles/default.css" />
+     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <!-- Header Include -->
+    <header>
+      <div data-include="components/header.html"></div>
+    </header>
+
+    <main>
+      <section id="form-section" class="intro-container">
+        <h1>Introduction Form</h1>
+        <p>Please submit the form below.</p>
+
+        <form id="intro-form">
+          <fieldset>
+            <legend>Identity</legend>
+            <label>First Name:
+              <input required name="firstName" type="text" />
+            </label>
+            <label>Middle Name or Initial (optional):
+              <input name="middleName" type="text" />
+            </label>
+            <label>Nickname / Preferred Name (optional):
+              <input name="nickname" type="text" />
+            </label>
+            <label>Last Name:
+              <input required name="lastName" type="text" />
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Acknowledgment</legend>
+            <label>Statement:
+              <input
+                required
+                name="ackStatement"
+                value="I acknowledge this work"
+              />
+            </label>
+            <label>Date:
+  <input
+    required
+    type="text"
+    name="ackDate"
+    aria-label="Acknowledgment Date"
+    placeholder="mm/dd/yyyy"
+    onfocus="(this.type='date')"
+    onblur="if(!this.value)this.type='text'"
+  />
+</label>
+
+          </fieldset>
+
+          <fieldset>
+            <legend>Mascot</legend>
+            <label>Adjective:
+              <input required name="adjective" placeholder="Vibrant" />
+            </label>
+            <label>Animal:
+              <input required name="animal" placeholder="Vulture" />
+            </label>
+            <label>Divider:
+              <input name="divider" placeholder="|" />
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Picture</legend>
+            <label>Upload your image:
+              <input type="file" name="image" accept="image/*" />
+            </label>
+            <label>Picture Caption:
+              <input
+                name="caption"
+                placeholder="Vasista (Vasi) Vegesana"
+                required
+              />
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Personal Info</legend>
+            <label>Personal Statement:
+              <textarea name="personalStatement" rows="2">I'm a sophomore at UNC Charlotte studying Computer Science. I’m still exploring my path but interested in AI and creative technology.</textarea>
+            </label>
+            <label>Personal Background:
+              <textarea name="personalBackground" rows="2">I grew up in North Carolina and love learning about technology.</textarea>
+            </label>
+            <label>Academic Background:
+              <textarea name="academicBackground" rows="2">Currently pursuing a B.S. in Computer Science at UNC Charlotte.</textarea>
+            </label>
+            <label>Professional Background:
+              <textarea name="professionalBackground" rows="2">Still exploring my career path, but I’m excited to grow professionally.</textarea>
+            </label>
+            <label>Programming/Software Background:
+              <textarea name="softwareBackground" rows="2">Beginner in HTML, CSS, and Python. Currently learning JS.</textarea>
+            </label>
+            <label>Course Goals:
+              <textarea name="courseGoals" rows="2">I want to improve my HTML/CSS/JS skills and build real projects.</textarea>
+            </label>
+            <label>Academic Interests:
+              <textarea name="academicInterests" rows="2">Interested in AI, data science, and UI/UX design.</textarea>
+            </label>
+            <label>Fun Fact:
+              <textarea name="funFact" rows="2">I love photography and trying new foods.</textarea>
+            </label>
+          </fieldset>
+
+            <fieldset>
+  <legend>Courses</legend>
+  <div id="courses">
+    <div class="course-row">
+      <input value="CTCM" />
+      <input value="2530" />
+      <input value="Critical Thinking" />
+      <input value="Degree Requirement" />
+      <button type="button" class="delete-course">Delete</button>
+    </div>
+    <div class="course-row">
+      <input value="INFO" />
+      <input value="2130" />
+      <input value="Intro to Business Computing" />
+      <input value="Degree requirement for minor" />
+      <button type="button" class="delete-course">Delete</button>
+    </div>
+    <div class="course-row">
+      <input value="ITIS" />
+      <input value="3135" />
+      <input value="Front-End Web App Development" />
+      <input value="Very interested; skills for future endeavors" />
+      <button type="button" class="delete-course">Delete</button>
+    </div>
+    <div class="course-row">
+      <input value="ITSC" />
+      <input value="2175" />
+      <input value="Logic and Algorithms" />
+      <input value="Degree requirement; want to learn more" />
+      <button type="button" class="delete-course">Delete</button>
+    </div>
+    <div class="course-row">
+      <input value="STAT" />
+      <input value="2122" />
+      <input value="Intro to Prob & Stat" />
+      <input value="Degree Requirement" />
+      <button type="button" class="delete-course">Delete</button>
+    </div>
+    <div class="course-row">
+      <input value="ITIS" />
+      <input value="3688" />
+      <input value="Computers & Their Impact on Society" />
+      <input value="Degree Requirement" />
+      <button type="button" class="delete-course">Delete</button>
+    </div>
+  </div>
+  <button type="button" id="add-course">Add Course</button>
+</fieldset>
+
+
+          <fieldset>
+            <legend>Quote</legend>
+            <label>Quote:
+              <input
+                name="quote"
+                value="Make it work, make it right, make it fast."
+              />
+            </label>
+            <label>Author:
+              <input name="author" value="Kent Beck" />
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Extras (optional)</legend>
+            <label>Funny Thing:
+              <input name="funnyThing" placeholder="Something funny" />
+            </label>
+            <label>Something to Share:
+              <textarea
+                name="share"
+                placeholder="Anything you'd like to share"
+              ></textarea>
+            </label>
+          </fieldset>
+
+          <div class="buttons">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <button type="button" id="clear">Clear</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="result" hidden>
+        <h2 class="visually-hidden">Form Result Section</h2>
+      </section>
+    </main>
+
+    <!-- Footer Include -->
+    <footer>
+      <div data-include="components/footer.html"></div>
+    </footer>
+
+    <script src="scripts/htmlinclude.js"></script>
+    <script src="scripts/introduction.js"></script>
+  </body>
+</html>
