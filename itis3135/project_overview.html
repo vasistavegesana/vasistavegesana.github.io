@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Project Part 1 – Aunt’s Kitchen</title>
+<link rel="stylesheet" href="styles/default.css">
+</head>
+<body>
+<header>
+  <h1>Vasista Vegesana</h1>
+  <h2>ITIS 3135 – Client Project Part 1</h2>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="introduction.html">Introduction</a>
+    <a href="project_overview.html" aria-current="page">Project Overview</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Aunt’s Kitchen – Requirements & Design Proposal</h2>
+
+  <section>
+    <h3>Project Overview</h3>
+    <p><strong>Purpose:</strong> To create a modern, easy-to-use website for my aunt’s homemade food business called <em>Aunt’s Kitchen</em>. The site will showcase her menu, food photos, specials, and allow customers to place inquiries or small local orders.</p>
+
+    <p><strong>Intended Users:</strong></p>
+    <ul>
+      <li>Local customers looking for home-cooked meals</li>
+      <li>Event planners searching for catering options</li>
+      <li>Returning customers checking specials or contact info</li>
+    </ul>
+
+    <p><strong>Website Content:</strong></p>
+    <ul>
+      <li>Menu with categories and prices</li>
+      <li>Gallery of food photos</li>
+      <li>About section (story, values)</li>
+      <li>Order/contact form</li>
+      <li>Special offers section</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Client Information</h3>
+    <p><strong>Name:</strong> [Aunt’s Name]</p>
+    <p><strong>Business:</strong> Aunt’s Kitchen</p>
+    <p><strong>Email:</strong> [private]</p>
+    <p><strong>Phone:</strong> [private]</p>
+    <p><em>Note: Contact details hidden for privacy; shared separately with instructor.</em></p>
+  </section>
+
+  <section>
+    <h3>Wireframe</h3>
+    <p>Created in Draw.io using Google Drive. Link: 
+       <a href="https://app.diagrams.net/" target="_blank">View Wireframe</a>
+    </p>
+    <figure>
+      <img src="images/wireframe-home.png" alt="Wireframe of Aunt’s Kitchen Home Page">
+      <figcaption>Figure 1. Home page layout wireframe</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h3>Site Map</h3>
+    <p>Created in Draw.io using Google Drive. Link: 
+       <a href="https://app.diagrams.net/" target="_blank">View Site Map</a>
+    </p>
+    <figure>
+      <img src="images/sitemap.png" alt="Aunt’s Kitchen Site Map">
+      <figcaption>Figure 2. Site map showing all website pages and navigation</figcaption>
+    </figure>
+    <ul>
+      <li>Home</li>
+      <li>Menu</li>
+      <li>Gallery</li>
+      <li>About</li>
+      <li>Contact</li>
+      <li>Specials</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Page Design Details</h3>
+
+    <h4>Home</h4>
+    <ul>
+      <li><strong>Purpose:</strong> Welcome users, highlight featured dishes, show daily special.</li>
+      <li><strong>Audience:</strong> All visitors.</li>
+      <li><strong>Content:</strong> Hero banner, “Our Story” snippet, call-to-action buttons.</li>
+      <li><strong>Actions:</strong> Buttons lead to Menu and Contact pages.</li>
+    </ul>
+
+    <h4>Menu</h4>
+    <ul>
+      <li><strong>Purpose:</strong> Display dishes with categories and prices.</li>
+      <li><strong>Audience:</strong> Customers ordering food.</li>
+      <li><strong>Content:</strong> List or table of meals with images.</li>
+      <li><strong>Interactivity:</strong> JavaScript filter by category (veg/non-veg, desserts, etc.).</li>
+    </ul>
+
+    <h4>Gallery</h4>
+    <ul>
+      <li><strong>Purpose:</strong> Show photos of prepared food.</li>
+      <li><strong>Interactivity:</strong> Lightbox image viewer (jQuery plugin).</li>
+    </ul>
+
+    <h4>About</h4>
+    <ul>
+      <li><strong>Purpose:</strong> Introduce Aunt and the story behind the business.</li>
+      <li><strong>Content:</strong> Biography, photos, mission statement.</li>
+    </ul>
+
+    <h4>Contact</h4>
+    <ul>
+      <li><strong>Purpose:</strong> Let users send inquiries or small orders.</li>
+      <li><strong>Content:</strong> Name, email, message form.</li>
+      <li><strong>Interactivity:</strong> Form validation and thank-you pop-up.</li>
+    </ul>
+
+    <h4>Specials</h4>
+    <ul>
+      <li><strong>Purpose:</strong> Show limited-time offers.</li>
+      <li><strong>Content:</strong> Rotating offers updated weekly.</li>
+      <li><strong>Interactivity:</strong> JavaScript slideshow banner.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Dynamic Functionality</h3>
+    <ul>
+      <li><strong>Slideshow Banner:</strong> JS rotates special dish images on Home page.</li>
+      <li><strong>Filterable Menu:</strong> Dropdown filters by dish type.</li>
+      <li><strong>Gallery Lightbox:</strong> Enlarge photos when clicked.</li>
+      <li><strong>Form Validation:</strong> JS checks for required fields before submitting.</li>
+      <li><strong>AJAX Specials Loader:</strong> Pulls daily specials from a local JSON file.</li>
+    </ul>
+
+    <h4>Example Sites</h4>
+    <ul>
+      <li><a href="https://www.panerabread.com/" target="_blank">Panera Bread</a> – menu & gallery inspiration</li>
+      <li><a href="https://www.dominos.com/" target="_blank">Domino’s</a> – rotating banners and interactivity</li>
+      <li><a href="https://jqueryui.com/" target="_blank">jQuery UI</a> – form and widget examples</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Timeline & Communication Plan</h3>
+    <ol>
+      <li>Week 1: Meet with Aunt to gather content (menu, photos)</li>
+      <li>Week 2: Create wireframes & site map</li>
+      <li>Week 3: Build basic pages and layout</li>
+      <li>Week 4: Add interactivity and get client feedback</li>
+      <li>Week 5: Final testing and presentation</li>
+    </ol>
+  </section>
+
+  <section>
+    <h3>References & Notes</h3>
+    <ul>
+      <li>All food photos used with client permission.</li>
+      <li>Icons from <a href="https://fontawesome.com/">Font Awesome</a>.</li>
+      <li>Prepared by Vasista Vegesana – <span id="date"></span></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <nav>
+    <a href="itis3135/">ITIS3135</a> |
+    <a href="https://github.com/vasistavegesana" target="_blank">GitHub</a> |
+    <a href="https://www.linkedin.com/in/vasista-vegesana-585aba1a5/" target="_blank">LinkedIn</a>
+  </nav>
+
+  <p>
+    Page built by 
+    <a href="itis3135/vasista.enterprises.com/index.html" target="_blank">
+      Vasista Enterprises
+    </a> 
+    © 2025
+  </p>
+</footer>
+
+<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+<script>
+  document.getElementById("date").textContent = new Date().toLocaleDateString();
+</script>
+</body>
+</html>
