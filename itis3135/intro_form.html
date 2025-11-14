@@ -27,16 +27,16 @@
           <fieldset>
             <legend>Identity</legend>
             <label>First Name:
-              <input required name="firstName" type="text" />
+              <input required name="firstName" type="text" placeholder="Vasista" value="Vasista"/>
             </label>
             <label>Middle Name or Initial (optional):
               <input name="middleName" type="text" />
             </label>
             <label>Nickname / Preferred Name (optional):
-              <input name="nickname" type="text" />
+              <input name="nickname" type="text" placeholder="Vasi" value="Vasi" />
             </label>
             <label>Last Name:
-              <input required name="lastName" type="text" />
+              <input required name="lastName" type="text" placeholder="Vegesana" value="Vegesana"/>
             </label>
           </fieldset>
 
@@ -56,6 +56,7 @@
     name="ackDate"
     aria-label="Acknowledgment Date"
     placeholder="mm/dd/yyyy"
+    value="2025-08-28"
     onfocus="(this.type='date')"
     onblur="if(!this.value)this.type='text'"
   />
@@ -66,13 +67,13 @@
           <fieldset>
             <legend>Mascot</legend>
             <label>Adjective:
-              <input required name="adjective" placeholder="Vibrant" />
+              <input required name="adjective" placeholder="Vibrant" value="Vibrant" />
             </label>
             <label>Animal:
-              <input required name="animal" placeholder="Vulture" />
+              <input required name="animal" placeholder="Vulture" value="Vulture" />
             </label>
             <label>Divider:
-              <input name="divider" placeholder="|" />
+              <input name="divider" placeholder="|" value="|" />
             </label>
           </fieldset>
 
@@ -85,6 +86,7 @@
               <input
                 name="caption"
                 placeholder="Vasista (Vasi) Vegesana"
+                value="Vasista (Vasi) Vegesana"
                 required
               />
             </label>
@@ -120,50 +122,7 @@
 
             <fieldset>
   <legend>Courses</legend>
-  <div id="courses">
-    <div class="course-row">
-      <input value="CTCM" />
-      <input value="2530" />
-      <input value="Critical Thinking" />
-      <input value="Degree Requirement" />
-      <button type="button" class="delete-course">Delete</button>
-    </div>
-    <div class="course-row">
-      <input value="INFO" />
-      <input value="2130" />
-      <input value="Intro to Business Computing" />
-      <input value="Degree requirement for minor" />
-      <button type="button" class="delete-course">Delete</button>
-    </div>
-    <div class="course-row">
-      <input value="ITIS" />
-      <input value="3135" />
-      <input value="Front-End Web App Development" />
-      <input value="Very interested; skills for future endeavors" />
-      <button type="button" class="delete-course">Delete</button>
-    </div>
-    <div class="course-row">
-      <input value="ITSC" />
-      <input value="2175" />
-      <input value="Logic and Algorithms" />
-      <input value="Degree requirement; want to learn more" />
-      <button type="button" class="delete-course">Delete</button>
-    </div>
-    <div class="course-row">
-      <input value="STAT" />
-      <input value="2122" />
-      <input value="Intro to Prob & Stat" />
-      <input value="Degree Requirement" />
-      <button type="button" class="delete-course">Delete</button>
-    </div>
-    <div class="course-row">
-      <input value="ITIS" />
-      <input value="3688" />
-      <input value="Computers & Their Impact on Society" />
-      <input value="Degree Requirement" />
-      <button type="button" class="delete-course">Delete</button>
-    </div>
-  </div>
+  <div id="courses"></div>
   <button type="button" id="add-course">Add Course</button>
 </fieldset>
 
